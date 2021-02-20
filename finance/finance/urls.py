@@ -17,6 +17,7 @@ from django.contrib import admin
 from django.urls import include, path
 from users.views import *
 from expenses.views import *
+from split.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -32,4 +33,6 @@ urlpatterns = [
     #expenses paths
     path('expenses/', include('expenses.urls')),
     path('newExpense/', newExpense, name='newExpense'),
+    path('expenses/', include('split.urls')),
+    path('split/', split, name='split')
 ]
