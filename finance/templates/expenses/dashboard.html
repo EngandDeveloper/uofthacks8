@@ -1,0 +1,17 @@
+{% extends 'users/base.html' %}
+
+{% block body %}
+
+    {% for e in expenses %}
+        <div class="expense-item">
+            Description: {{e.description}} <br>
+            Amount: {{e.amount}} <br>
+            Budget Category: {{e.budgetCategory}} <br>
+            isShared: {{e.isShared}} <br>
+            Shared With: {{e.sharedWith}} <br>
+            Date: {{e.date}}<br>
+        </div>
+        <br>
+    {% endfor %}
+
+{% endblock %}

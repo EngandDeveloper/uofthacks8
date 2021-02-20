@@ -27,3 +27,10 @@ def newExpense(request):
 
     context = {'form': form}
     return render(request, 'expenses/index.html', context)
+
+def getExpenses(request):
+    context = {}
+    user = request.user
+    expenses = Expense.objects.all().filter(user__username__contains=user.username)
+    context = {'expenses':expenses}
+    return render(request, 'expenses/dashboard.html', context)
