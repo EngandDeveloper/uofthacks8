@@ -11,6 +11,18 @@
 
         <header>
 
+            <p>Hello {{request.user}}</p>
+            <a href="{% url 'logoutUser' %}">Logout</a>
+            <form action="/login/" method="POST" id="loginButton">
+              {% csrf_token %} 
+              <input type="submit" name="loginButton" id="loginButton" value="login">
+            </form>
+        
+            <form action="/register/" method="POST" id="registerButton">
+                {% csrf_token %} 
+                <input type="submit" name="registerButton" id="registerButton" value="register">
+            </form>
+
             Pay your student debts!
 
             <nav>
