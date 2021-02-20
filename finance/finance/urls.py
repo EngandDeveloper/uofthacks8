@@ -31,5 +31,5 @@ urlpatterns = [
     path('registerUser/', registerUser, name='registerUser'),
     #expenses paths
     path('expenses/', include('expenses.urls')),
-    path('exp/', expenses, name="expenses")
+    path('newExpense/', newExpense, name='newExpense'),
 ]
