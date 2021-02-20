@@ -1,0 +1,14 @@
+p {
+    margin: 0%!important;
+    padding: 0%!important;
+}
+
+header {
+    background-color: #F1FAEE;
+}
+
+footer {
+    background-color: #E63946;
+    color: #F1FAEE;
+    padding-left: 2%;
+}

@@ -1,7 +1,46 @@
 {% extends 'users/base.html' %}
+{% load static %}
+
+{% block title %}
+
+{% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/landing.css' %}"/>
+{% endblock %}
 
 {% block body %}
 
-    <h2>You are in the landing page!</h2>
+    <div class="bg-1">
+        <h3>Student Debt problem in Canada</h3>
+        <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut tortor gravida diam finibus pellentesque. 
+            Nam luctus cursus lectus ut sollicitudin.
+            Suspendisse pharetra tincidunt accumsan. 
+            Integer ultricies consectetur sem sed finibus. Morbi nec metus risus. 
+            Sed volutpat pulvinar mollis. Nunc non velit dui. Ut tincidunt nulla justo, id convallis velit. 
+        </p>
+        <img src="{% static "images/image1.jpg" %}" alt="Hi!" width="20%" height="10%" />
+    </div>
+
+    <div class="bg-2">
+        <h3>Student Debt problem in Canada</h3>
+        <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut tortor gravida diam finibus pellentesque. 
+            Nam luctus cursus lectus ut sollicitudin.
+            Suspendisse pharetra tincidunt accumsan. 
+            Integer ultricies consectetur sem sed finibus. Morbi nec metus risus. 
+            Sed volutpat pulvinar mollis. Nunc non velit dui. Ut tincidunt nulla justo, id convallis velit. 
+        </p>
+    </div>
+
+    <div class="bg-3">
+        <h3>Student Debt problem in Canada</h3>
+        <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut tortor gravida diam finibus pellentesque. 
+            Nam luctus cursus lectus ut sollicitudin.
+            Suspendisse pharetra tincidunt accumsan. 
+            Integer ultricies consectetur sem sed finibus. Morbi nec metus risus. 
+            Sed volutpat pulvinar mollis. Nunc non velit dui. Ut tincidunt nulla justo, id convallis velit. 
+        </p>
+        down
+    </div>
 
 {% endblock %}
