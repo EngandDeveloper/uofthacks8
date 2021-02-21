@@ -1,10 +1,30 @@
+{% extends "users/base.html" %}
+{% block body %}
 <h1>Incoming Transfers</h1>
-{% for payment in pay_dictionary if payment.recipient == request.user %}
-Payment: {{ payment.amount }}
-Payor: {{ payment.primary_user }}
+{% for payment in pendingpay %}
+    {% if payment.recipient == request.user %}
+    
+        <b>Payment:</b> {{ payment.amount }} <br>
+        <b>Payor:</b> {{ payment.user }} <br>
+        <b>Paid:</b> {{ payment.paid }} <br>
+        
+        {% if payment.paid == False %}
+
+        <form method="POST">
+            {% csrf_token %}
+            <button type="submit" name=button value={{ forloop.counter0 }}> User has paid!</button>
+        </form>
+        
+        {% endif %}
+        <br>
+    {% endif %}
 {% endfor %}
-<h2>Outgoing Debts</h2>
-{% for payment in pay_dictionary if payment.primary_user == request.user %}
-Payment: {{ payment.amount }}
-Payor: {{ payment.primary_user }}
+<h1>Outgoing Debts</h1>
+{% for payment in pendingpay %}
+    {% if payment.user == request.user and payment.paid == False %}
+    <b>Payment:</b> {{ payment.amount }} <br>
+    <b>Payee:</b> {{ payment.recipient }} <br>
+    <br>
+    {% endif %}
 {% endfor %}
+{% endblock %}

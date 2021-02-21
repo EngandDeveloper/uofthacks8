@@ -8,7 +8,19 @@ def pendingpay(request):
     pay_dictionary = {
         'pendingpay' : pendingpay
     }
-    return(request, 'split/pendingpay.html', pay_dictionary)
+    if request.method == "POST":
+        for i in range(len(pendingpay)):
+            if i == int(request.POST.get('button')):
+                    target = pendingpay[i]
+                    target.paid = True
+                    target.save()
+        pay_dictionary = {
+        'pendingpay' : pendingpay
+        }
+        return render(request, 'split/pendingpay.html', pay_dictionary)
+
+
+    return render(request, 'split/pendingpay.html', pay_dictionary)
 
 def split(request):
     users = User.objects.all()
