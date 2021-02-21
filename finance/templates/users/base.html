@@ -32,9 +32,12 @@
                             <li class="nav-item"><a class="nav-link" href="{% url 'index' %}">Home</a></li>
                             <li class="nav-item"><a class="nav-link" href="{% url 'login' %}">Login</a></li>
                             <li class="nav-item"><a class="nav-link" href="{% url 'register' %}">Register</a></li>
-                            <li class="nav-item"><a class="nav-link" href="{% url 'expenses' %}">Expenses</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{% url 'getExpenses' %}">Expenses</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{% url 'savings' %}">Savings</a></li>
                             <li class="nav-item"><a class="nav-link disabled">Hello, {{request.user}}</a></li>
-                            <li class="nav-item"><a class="nav-link" href="{% url 'logoutUser' %}">Logout</a></li>
+                            {% if request.user.is_authenticated %}
+                                <li class="nav-item"><a class="nav-link" href="{% url 'logoutUser' %}">Logout</a></li>
+                            {% endif %}
                         </ul>
 
                     </nav>

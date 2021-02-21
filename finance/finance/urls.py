@@ -18,6 +18,7 @@ from django.urls import include, path
 from users.views import *
 from expenses.views import *
 from split.views import *
+from savings.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -33,5 +34,16 @@ urlpatterns = [
     #expenses paths
     path('expenses/', include('expenses.urls')),
     path('newExpense/', newExpense, name='newExpense'),
+<<<<<<< HEAD
     path('split/', include('split.urls'))
+=======
+    path('expenses/', include('split.urls')),
+    #Split paths
+    path('split/', include('split.urls')),
+    path('split/', split, name='split'),
+    #Savings paths
+    path('savings/', include('savings.urls')),
+    path('setNewGoal/', setNewGoal, name="setNewGoal"),
+    path('newGoal/', goalSettingPage, name="newGoal"),
+>>>>>>> ef246a40361e0ec18c7538b23a5290fbe39b1401
 ]

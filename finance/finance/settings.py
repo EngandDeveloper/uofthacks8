@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'users',
     'expenses',
     'split',
+    'savings',
 ]
 
 MIDDLEWARE = [
