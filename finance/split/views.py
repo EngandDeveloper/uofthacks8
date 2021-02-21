@@ -3,7 +3,12 @@ from django.contrib.auth.models import User
 from split.models import SharedExp, PendingPay
 
 # Create your views here.
-
+def pendingpay(request):
+    pendingpay = PendingPay.objects.all()
+    pay_dictionary = {
+        'pendingpay' : pendingpay
+    }
+    return(request, 'split/pendingpay.html', pay_dictionary)
 
 def split(request):
     users = User.objects.all()

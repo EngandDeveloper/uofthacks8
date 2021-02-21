@@ -1,18 +1,10 @@
-<h1>Pending Pay</h1>
-<form action="" method='POST'>
-    {% csrf_token %}
-    <label for="title">Expense Title:</label>
-    <input type="text" id="title" name="title"><br>
-    <label for="amount">Amount:</label>
-    <input type="number" id="amount" name="amount"><br>
-    <label for="date">Date:</label>
-    <input type="date" id="date" name="date"><br>
-    {% for user in users %}
-    <input type="checkbox" id={{ user.username }} name={{ user.username }} value="FriendId">
-    <label> {{ user.username }} </label><br>
-    {% endfor %}
-    
-    
-    
-    <input type="submit" value="Submit">
-</form>
+<h1>Incoming Transfers</h1>
+{% for payment in pay_dictionary if payment.recipient == request.user %}
+Payment: {{ payment.amount }}
+Payor: {{ payment.primary_user }}
+{% endfor %}
+<h2>Outgoing Debts</h2>
+{% for payment in pay_dictionary if payment.primary_user == request.user %}
+Payment: {{ payment.amount }}
+Payor: {{ payment.primary_user }}
+{% endfor %}
