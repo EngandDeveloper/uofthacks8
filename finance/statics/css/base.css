@@ -10,11 +10,12 @@ header {
 footer {
     background-color: #E63946;
     color: #F1FAEE;
-    padding-left: 2%;
+    padding: 1%;
     position: absolute;
     bottom: 0;
     width: 100%;
     height: 2.5rem;
+    align-content: center;
 }
 
 .page-container {
@@ -26,6 +27,11 @@ footer {
     padding-bottom: 2.5rem;    /* Footer height */
 }
 
-/* .margin-wrap input {
-    margin: 1%!important;
-} */
+.form-wrapper {
+    /* margin-left: 25%!important; */
+    align-content: center;
+    text-align: center;
+    width: 50%;
+    margin: auto;
+    display: table;
+}

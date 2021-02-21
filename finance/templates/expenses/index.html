@@ -2,34 +2,37 @@
 
 {% block body %}
 
-
-    <div class="new-expense">
-        <form action="/newExpense/" method="POST">
-            {% csrf_token %}
-            <div class="mb-3">
-                <input type="text" class="form-control" name="description" placeholder="Description...">
-            </div>
-            <div class="mb-3">
-                <input type="number" step="any" class="form-control" name="amount" placeholder="Amount...">
-            </div>
-            <!-- Convert it to a dropdown with the categories -->
-            <div class="mb-3">
-                <input type="text" class="form-control" name="budgetCategory" placeholder="Category...">
-            </div>
-            <div class="mb-3">
-                <select class="form-control" name="isShared">
-                    <option value="True">True</option>
-                    <option value="False">False</option>
-                </select>
-            </div>
-            <div class="mb-3">
-                <input type="text" class="form-control" name="sharedWith" placeholder="Shared With...">
-            </div>
-            <div class="mb-3">
-                <input type="date" class="form-control" name="date">
-            </div>
-            <input type="submit" class="btn btn-primary" value="Add New Expense" name="newExpense">
-        </form>
+    <br>
+    <div class="form-wrapper">
+        <div class="new-expense">
+            <form action="/newExpense/" method="POST">
+                {% csrf_token %}
+                <div class="mb-3">
+                    <input type="text" class="form-control" name="description" placeholder="Description...">
+                </div>
+                <div class="mb-3">
+                    <input type="number" step="any" class="form-control" name="amount" placeholder="Amount...">
+                </div>
+                <!-- Convert it to a dropdown with the categories -->
+                <div class="mb-3">
+                    <input type="text" class="form-control" name="budgetCategory" placeholder="Category...">
+                </div>
+                <div class="mb-3">
+                    <select class="form-select" name="isShared">
+                        <option selected>Is this a shared expense?</option>
+                        <option value="True">True</option>
+                        <option value="False">False</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <input type="text" class="form-control" name="sharedWith" placeholder="Shared With...">
+                </div>
+                <div class="mb-3">
+                    <input type="date" class="form-control" name="date">
+                </div>
+                <input type="submit" class="btn btn-primary" value="Add New Expense" name="newExpense">
+            </form>
+        </div>
     </div>
 
 {% endblock %}

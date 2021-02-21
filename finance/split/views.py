@@ -1,5 +1,7 @@
 from django.shortcuts import render
 from django.contrib.auth.models import User
+
+from split.models import SharedExp
 # Create your views here.
 def split(request):
     users = User.objects.all()
@@ -19,4 +21,4 @@ def split(request):
     user_dictionary = {
         'users': users
     }
-    return render(request, 'split/index.html',user_dictionary)
+    return render(request, 'split/index.html', user_dictionary)
