@@ -32,5 +32,26 @@ def getExpenses(request):
     context = {}
     user = request.user
     expenses = Expense.objects.all().filter(user__username__contains=user.username)
-    context = {'expenses':expenses}
+    #Budget Categories
+    rent = 0
+    food = 0
+    transportation = 0
+    entertainment = 0
+    emergencies = 0
+    other = 0
+    for i in expenses:
+        if i.budgetCategory == "Rent":
+            rent += i.amount
+        elif i.budgetCategory == "Food":
+            food += i.amount
+        elif i.budgetCategory == "Transportation":
+            transportation += i.amount
+        elif i.budgetCategory == "Entertainment":
+            entertainment += i.amount
+        elif i.budgetCategory == "Emergencies":
+            emergencies += i.amount
+        elif i.budgetCategory == "Other":
+            other += i.amount
+    budgets = [rent, food, transportation, entertainment, emergencies, other]
+    context = {'expenses':expenses, 'budgets':budgets}
     return render(request, 'expenses/dashboard.html', context)

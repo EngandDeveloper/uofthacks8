@@ -2,16 +2,68 @@
 
 {% block body %}
 
-    {% for e in expenses %}
-        <div class="expense-item">
-            Description: {{e.description}} <br>
-            Amount: {{e.amount}} <br>
-            Budget Category: {{e.budgetCategory}} <br>
-            isShared: {{e.isShared}} <br>
-            Shared With: {{e.sharedWith}} <br>
-            Date: {{e.date}}<br>
+    <br>
+    <div class="container">
+        <div class="row">
+          <div class="col bg-info border border-5">
+            <h5>Rent</h5>
+            ${{budgets.0}}
+          </div>
+          <div class="col bg-warning border border-5">
+            <h5>Food</h5>
+            ${{budgets.1}}
+          </div>
+          <div class="col bg-danger border border-5">
+            <h5>Transportation</h5>
+            ${{budgets.2}}
+          </div>
         </div>
-        <br>
-    {% endfor %}
+        <div class="row">
+          <div class="col bg-danger border border-5">
+            <h5>Entertainment</h5>
+            ${{budgets.3}}
+          </div>
+          <div class="col bg-warning border border-5">
+            <h5>Emergencies</h5>
+            ${{budgets.4}}
+          </div>
+          <div class="col bg-info border border-5">
+            <h5>Other</h5>
+            ${{budgets.5}}
+          </div>
+        </div>
+    </div>
+
+    <br>
+
+    <div class="form-wrapper">
+        <div class="accordion" id="accordionExample">
+            <div class="accordion-item">
+            <h2 class="accordion-header" id="headingOne">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                See Expense History
+                </button>
+            </h2>
+            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    {% for e in expenses %}
+                        <div class="expense-item">
+                            Description: {{e.description}} <br>
+                            Amount: ${{e.amount}} <br>
+                            Budget Category: {{e.budgetCategory}} <br>
+                            <!-- isShared: {{e.isShared}} <br>
+                            Shared With: {{e.sharedWith}} <br> -->
+                            Date: {{e.date}}<br>
+                        </div>
+                        <br>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <br>
+
+    <a href="{% url 'expenses' %}" class="btn btn-outline-success">Add New Expense</a>
 
 {% endblock %}
