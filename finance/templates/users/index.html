@@ -13,34 +13,60 @@
 
     <div class="bg-1">
         <h3>Student Debt problem in Canada</h3>
-        <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut tortor gravida diam finibus pellentesque. 
-            Nam luctus cursus lectus ut sollicitudin.
-            Suspendisse pharetra tincidunt accumsan. 
-            Integer ultricies consectetur sem sed finibus. Morbi nec metus risus. 
-            Sed volutpat pulvinar mollis. Nunc non velit dui. Ut tincidunt nulla justo, id convallis velit. 
-        </p>
-        <img src="{% static "images/image1.jpg" %}" alt="Hi!" width="20%" height="10%" />
+        <div class="container">
+            <div class="row">
+              <div class="col-3">
+                <img src="{% static "images/image1.jpg" %}" alt="Hi!" width="60%" height="100%" />
+              </div>
+              <div class="col-4 align-self-center">
+                <p> 
+                    Number of students who are taking student loans are increasing every year. More and more students are graduating with increasing level
+                    of debts and they are struggling to pay it. <br>
+                    
+                </p>
+              </div>
+              <div class="col-5">
+                <img src="{% static "images/student_debts.jpg" %}" alt="Hi!" width="100%" height="100%" />
+              </div>
+            </div>
+          </div>
     </div>
 
     <div class="bg-2">
-        <h3>Student Debt problem in Canada</h3>
-        <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut tortor gravida diam finibus pellentesque. 
-            Nam luctus cursus lectus ut sollicitudin.
-            Suspendisse pharetra tincidunt accumsan. 
-            Integer ultricies consectetur sem sed finibus. Morbi nec metus risus. 
-            Sed volutpat pulvinar mollis. Nunc non velit dui. Ut tincidunt nulla justo, id convallis velit. 
-        </p>
+        <div class="container">
+            <div class="row">
+              <div class="col align-self-start">
+                <img src="{% static "images/image4.jpg" %}" alt="Hi!" width="100%" height="70%"/>
+              </div>
+              <div class="col align-self-center">
+                <h3> We can help!</h3>
+                Our app can help you by:
+                <br>
+                <ul class="list-group">
+                    <li class="list-group-item list-group-item-warning">Tracking your expenses.</li>
+                    <li class="list-group-item list-group-item-primary">Aiding you to split expenses with friends.</li>
+                    <li class="list-group-item list-group-item-secondary">Setting saving goals and meeting them.</li>
+                    <li class="list-group-item list-group-item-success">Budgeting your income.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        
     </div>
 
     <div class="bg-3">
-        <h3>Student Debt problem in Canada</h3>
-        <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut tortor gravida diam finibus pellentesque. 
-            Nam luctus cursus lectus ut sollicitudin.
-            Suspendisse pharetra tincidunt accumsan. 
-            Integer ultricies consectetur sem sed finibus. Morbi nec metus risus. 
-            Sed volutpat pulvinar mollis. Nunc non velit dui. Ut tincidunt nulla justo, id convallis velit. 
-        </p>
-        down
+        <div class="container">
+            <div class="row">
+              <div class="col">
+                <h3>Take action now! Save money for your future...</h3>
+                <h4>Pay your student loan debt off!</h4>
+                <button class="btn btn-primary"><a href="{% url 'register' %}"></a>Register Now!</button>
+              </div>
+              <div class="col">
+                <img src="{% static "images/image2.jpg" %}" alt="Hi!" width="60%" height="100%" />
+              </div>
+            </div>
+        </div>
     </div>
 
 {% endblock %}

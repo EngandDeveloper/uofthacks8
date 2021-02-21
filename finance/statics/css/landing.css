@@ -1,20 +1,17 @@
 .bg-1 {
     background-color: #A8DADC;
     color: black;
-    padding-left: 2%;
-    padding-right: 2%;
+    padding: 2%;
 }
 
 .bg-2 {
     background-color: #457B9D;
-    color: black;
-    padding-left: 2%;
-    padding-right: 2%;
+    color: #F1FAEE;
+    padding: 2%;
 }
 
 .bg-3 {
     background-color: #1D3557;
     color: #F1FAEE;
-    padding-left: 2%;
-    padding-right: 2%;
+    padding: 2%;
 }
