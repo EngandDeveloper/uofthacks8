@@ -9,25 +9,25 @@
 </div>
 <br>
 <h3 class="position-absolute start-50 translate-middle">Current Goals</h3>
-{% for g in goals %}
+{% for g in data %}
     <br>
     <div class="form-wrapper">
         <div class="accordion" id={{g.goalname}}>
             <div class="accordion-item">
                 <h2 class="accordion-header" id="headingOne">
                     <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                        {{g.goalname}}
+                        {{g.0.goalname}}
                     </button>
                 </h2>
                 <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent=#{{g.goalname}}>
                     <div class="accordion-body">
                         <br>
                         <div class="newGoal">
-                            Goal Name: {{g.goalname}}<br>
-                            Amount: ${{g.amount}}<br>
-                            Time: {{g.time}} months <br>
-                            Rate: {{g.rate}} %<br>
-                            Saving Must be Done to Reach the Goal: ${{payments.1}}/month
+                            Goal Name: {{g.0.goalname}}<br>
+                            Amount: ${{g.0.amount}}<br>
+                            Time: {{g.0.time}} months <br>
+                            Rate: {{g.0.rate}} %<br>
+                            Saving Must be Done to Reach the Goal: ${{g.1}}/month
                         </div>
                     </div>
                 </div>

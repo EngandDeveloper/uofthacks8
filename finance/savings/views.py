@@ -11,6 +11,7 @@ def savings(request):
     user = request.user
     goals = Goal.objects.all().filter(user__username__contains=user.username)
     payments = []
+    data = []
     for g in goals:
         fv = g.amount
         r = (g.rate/100)
@@ -18,7 +19,9 @@ def savings(request):
         answer = fvapmt(fv,r,t)
         formatted = str(round(answer, 2))
         payments.append(formatted)
-    context = {'goals':goals, 'payments':payments}
+        data.append([g,formatted])
+
+    context = {'goals':goals, 'payments':payments, 'data':data}
     return render(request, 'savings/index.html', context)
 
 def goalSettingPage(request):
@@ -37,4 +40,4 @@ def setNewGoal(request):
         form.save()
         context = {'form': form}
         return savings(request)
-    return render(request, 'savings/index.html', context)
+    return savings(request)
