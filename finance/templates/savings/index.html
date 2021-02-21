@@ -3,11 +3,12 @@
 {% block body %}
 
 <br>
+<br>
 <div>
-    <a class="btn btn-outline-success" href="{% url 'newGoal' %}">Set New Goal</a>
+    <a class="btn btn-outline-success position-relative start-50 translate-middle" href="{% url 'newGoal' %}">Set New Goal</a>
 </div>
-
-<h3>Current Goals</h3>
+<br>
+<h3 class="position-absolute start-50 translate-middle">Current Goals</h3>
 {% for g in goals %}
     <br>
     <div class="form-wrapper">

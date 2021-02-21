@@ -34,8 +34,6 @@ urlpatterns = [
     #expenses paths
     path('expenses/', include('expenses.urls')),
     path('newExpense/', newExpense, name='newExpense'),
-    path('split/', include('split.urls'))
-    path('expenses/', include('split.urls')),
     #Split paths
     path('split/', include('split.urls')),
     path('split/', split, name='split'),
