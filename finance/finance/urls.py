@@ -34,9 +34,7 @@ urlpatterns = [
     #expenses paths
     path('expenses/', include('expenses.urls')),
     path('newExpense/', newExpense, name='newExpense'),
-<<<<<<< HEAD
     path('split/', include('split.urls'))
-=======
     path('expenses/', include('split.urls')),
     #Split paths
     path('split/', include('split.urls')),
@@ -45,5 +43,4 @@ urlpatterns = [
     path('savings/', include('savings.urls')),
     path('setNewGoal/', setNewGoal, name="setNewGoal"),
     path('newGoal/', goalSettingPage, name="newGoal"),
->>>>>>> ef246a40361e0ec18c7538b23a5290fbe39b1401
 ]
